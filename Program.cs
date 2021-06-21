@@ -7,6 +7,12 @@ namespace Calculator
         static void Main(string[] args)
         {
             Console.Clear();
+            Soma();
+        }
+
+        static void Soma()
+        {
+            Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
             float v1 = float.Parse(Console.ReadLine());
