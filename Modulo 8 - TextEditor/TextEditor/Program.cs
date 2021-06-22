@@ -15,8 +15,8 @@ namespace TextEditor
             Console.Clear();
 
             Console.WriteLine("O que você deseja fazer?");
-            Console.WriteLine("1");
-            Console.WriteLine("2");
+            Console.WriteLine("1 - Abrir arquivo");
+            Console.WriteLine("2 - Criar novo arquivo");
             Console.WriteLine("0 - Sair");
 
             short option = short.Parse(Console.ReadLine());
@@ -61,12 +61,19 @@ namespace TextEditor
             }
             while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-            Save();
+            Save(text);
         }
-        static void Save() 
+        static void Save(string text) 
         {
             Console.Clear();
+            Console.WriteLine("Qual o caminho para salvar o arquivo?");
 
+            var path = Console.ReadLine();
+
+            using (var file = new StreamWriter(path))
+            {
+                file.Write(text);
+            }
         }
     }
 }
