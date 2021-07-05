@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploGuids();
+            ExemploInterpolacaoDeStrings();
         }
 
         static void ExemploGuids()
@@ -23,6 +23,19 @@ namespace Strings
             // retorna 00000000-0000-0000-0000-000000000000
 
             Console.WriteLine(id);
+        }
+
+        static void ExemploInterpolacaoDeStrings()
+        {
+            var price = 10.2;
+            //var texto = "O preço do produto é " + price + " na promoção";
+
+            //var texto = string.Format("O preço do produto é {0} apenas na promoção", price);
+
+            var texto = @$"O preço do produto é {price} 
+                           apenas na promoção";
+
+            Console.WriteLine(texto);
         }
     }
 }
