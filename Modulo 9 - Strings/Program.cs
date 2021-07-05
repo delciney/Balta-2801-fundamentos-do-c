@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Strings
 {
@@ -6,7 +7,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploManipulandoStrings();
+            ExemploStringBuilder();
         }
 
         static void ExemploGuids()
@@ -140,6 +141,18 @@ namespace Strings
 
             resultado = texto.Substring(5, texto.LastIndexOf("o"));
             Console.WriteLine(resultado);
+        }
+
+        static void ExemploStringBuilder()
+        {
+            var texto = new StringBuilder();
+
+            texto.Append("Este texto é um teste");
+            texto.Append("é um teste");
+            texto.Append("Este texto");
+            texto.Append("Este um teste");
+
+            Console.WriteLine(texto);
         }
     }
 }
