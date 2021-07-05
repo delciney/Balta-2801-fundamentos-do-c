@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploInterpolacaoDeStrings();
+            ExemploComparacaoDeStrings();
         }
 
         static void ExemploGuids()
@@ -36,6 +36,22 @@ namespace Strings
                            apenas na promoção";
 
             Console.WriteLine(texto);
+        }
+
+        static void ExemploComparacaoDeStrings()
+        {
+            var texto = "Testando";
+
+            Console.WriteLine(texto.CompareTo("Testando")); // retorna 0 se encontrar 
+            Console.WriteLine(texto.CompareTo("testando")); // retorna 1 se não encontrar 
+
+            Console.WriteLine(texto.Contains("Testando")); // retorna true se encontrar 
+            Console.WriteLine(texto.Contains("testando")); // retorna false se não encontrar 
+            Console.WriteLine(texto.Contains(
+                "testando", 
+                StringComparison.OrdinalIgnoreCase)
+                ); // não diferencia maiusculo de minusculo 
+
         }
     }
 }
