@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploEquals();
+            ExemploIndices();
         }
 
         static void ExemploGuids()
@@ -83,6 +83,26 @@ namespace Strings
                 "este texto é um teste",
                 StringComparison.OrdinalIgnoreCase
                 )); // não diferencia maiusculo de minusculo 
+        }
+
+        static void ExemploIndices()
+        {
+            var texto = "Este texto é um teste";
+
+            Console.WriteLine(texto.IndexOf("é")); // retorna a posição na string (11) se encontrar
+            Console.WriteLine(texto.IndexOf("É")); // retorna -1 se não encontrar
+            Console.WriteLine(texto.IndexOf(
+                "É", 
+                StringComparison.OrdinalIgnoreCase
+                )); // não diferencia maiusculo de minusculo
+
+            Console.WriteLine(texto.LastIndexOf("s")); // retorna a posição na string (11) se encontrar
+            Console.WriteLine(texto.LastIndexOf("S")); // retorna -1 se não encontrar
+            Console.WriteLine(texto.LastIndexOf(
+                "S",
+                StringComparison.OrdinalIgnoreCase
+                )); // não diferencia maiusculo de minusculo
+
         }
     }
 }
