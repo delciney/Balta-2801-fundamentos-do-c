@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploIndices();
+            ExemploMetodosAdicionais();
         }
 
         static void ExemploGuids()
@@ -103,6 +103,19 @@ namespace Strings
                 StringComparison.OrdinalIgnoreCase
                 )); // não diferencia maiusculo de minusculo
 
+        }
+
+        static void ExemploMetodosAdicionais()
+        {
+            var texto = "Este texto é um teste";
+
+            Console.WriteLine(texto.ToLower()); // Converte para minúsculo
+            Console.WriteLine(texto.ToUpper()); // Converte para maiúsculo
+
+            Console.WriteLine(texto.Insert(5, "AQUI ")); // Adiciona uma string em um indice determinado
+            Console.WriteLine(texto.Remove(5, 5)); // Remove uma string em um indice determinado
+
+            Console.WriteLine(texto.Length); // Retorna a quantidade de caracteres (21)
         }
     }
 }
