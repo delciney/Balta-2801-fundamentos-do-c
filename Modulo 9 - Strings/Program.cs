@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploMetodosAdicionais();
+            ExemploManipulandoStrings();
         }
 
         static void ExemploGuids()
@@ -116,6 +116,30 @@ namespace Strings
             Console.WriteLine(texto.Remove(5, 5)); // Remove uma string em um indice determinado
 
             Console.WriteLine(texto.Length); // Retorna a quantidade de caracteres (21)
+        }
+
+        static void ExemploManipulandoStrings()
+        {
+            var texto = " Este texto é um teste ";
+
+            Console.WriteLine(texto.Trim());
+
+            Console.WriteLine(texto.Replace("e", "X"));
+            Console.WriteLine(texto.Replace("xxxx", "X"));
+
+            var divisao = texto.Split(" ");
+
+            Console.WriteLine(divisao[0]);
+            Console.WriteLine(divisao[1]);
+            Console.WriteLine(divisao[2]);
+            Console.WriteLine(divisao[3]);
+            Console.WriteLine(divisao[4]);
+
+            var resultado = texto.Substring(5,5);
+            Console.WriteLine(resultado);
+
+            resultado = texto.Substring(5, texto.LastIndexOf("o"));
+            Console.WriteLine(resultado);
         }
     }
 }
