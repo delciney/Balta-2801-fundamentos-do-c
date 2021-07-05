@@ -6,7 +6,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            ExemploComparacaoDeStrings();
+            ExemploStartWithEndsWith();
         }
 
         static void ExemploGuids()
@@ -52,6 +52,25 @@ namespace Strings
                 StringComparison.OrdinalIgnoreCase)
                 ); // não diferencia maiusculo de minusculo 
 
+        }
+
+        static void ExemploStartWithEndsWith()
+        {
+            var texto = "Este texto é um teste";
+
+            Console.WriteLine(texto.StartsWith("Este")); // retorna true se encontrar 
+            Console.WriteLine(texto.StartsWith("este")); // retorna false se não encontrar
+            Console.WriteLine(texto.StartsWith(
+                "este",
+                StringComparison.OrdinalIgnoreCase
+                )); // não diferencia maiusculo de minusculo 
+
+            Console.WriteLine(texto.EndsWith("teste")); // retorna true se encontrar 
+            Console.WriteLine(texto.EndsWith("Teste")); // retorna false se não encontrar
+            Console.WriteLine(texto.EndsWith(
+                "Teste",
+                StringComparison.OrdinalIgnoreCase
+                )); // não diferencia maiusculo de minusculo 
         }
     }
 }
